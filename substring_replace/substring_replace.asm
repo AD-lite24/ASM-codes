@@ -44,11 +44,10 @@ temp db 0ah dup(?)
         mov [di], ah
 
         lea bx, string1
-        mov al, string1length
+        mov al, string1length ;some math to check how many charecters need to be shifted
         mov ah, 0h
         add bx, ax
         sub bx, si
-
 
         mov cl, bl ;calculated number of chars to shift
         inc di
