@@ -23,11 +23,11 @@ res dw 00h
         mov ch, 0
     
     TransferLoop:
-        ; cld 
-        ; lodsb
-        mov al, [si]
-        dec si
-        cli
+        std 
+        lodsb
+        ; mov al, [si]
+        ; dec si
+        cld
         stosb
         loop TransferLoop
         lea si, dat1
