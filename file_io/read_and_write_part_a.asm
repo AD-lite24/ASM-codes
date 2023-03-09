@@ -40,7 +40,8 @@ msg2 db 32 dup('$')
 
         mov ah, 40h 
         mov bx, handle1
-        mov cx, 31
+        mov cl, len1
+        mov ch, 0h
         lea dx, msg1
         int 21h             ;write to the file
 
@@ -63,7 +64,8 @@ msg2 db 32 dup('$')
 
         mov ah, 40h 
         mov bx, handle2
-        mov cx, 31
+        mov cl, len2
+        mov ch, 0h
         lea dx, msg2
         int 21h             ;write to the file
 

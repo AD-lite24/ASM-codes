@@ -36,7 +36,7 @@ handle dw ?
 
         mov ah, 40h 
         mov bx, handle
-        mov cx, 31
+        mov cx, ac1
         lea dx, inp1
         int 21h             ;write to the file
 
