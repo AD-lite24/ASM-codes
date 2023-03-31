@@ -14,6 +14,9 @@ rowstr dw ?
         int 10h
 
         lea si, inp1
+        mov dl, cnt 
+        mov dh, 0
+        add si, dx
         lea di, cnt
         mov ch, 0
         mov cl, [di]
@@ -25,7 +28,7 @@ rowstr dw ?
         push cx
 
         mov ah, 02h     ;set cursor position
-        mov di, rowstr
+        lea di, rowstr
         mov dh, [di]
         lea di, colmstr
         mov dl, [di]
@@ -40,7 +43,7 @@ rowstr dw ?
         int 10h
         pop cx
 
-        inc si
+        dec si
         inc word ptr[di]        ;increment column
         lea di, rowstr
         inc word ptr[di]        ;increment row
@@ -59,4 +62,3 @@ rowstr dw ?
 
 .exit 
 end
-
